@@ -2,7 +2,7 @@
 # positive numbers in the list to "big".
 def biggie_size(arr):
     for i in range(len(arr)):
-        if arr[i] > 0:
+        if arr[i] >= 0:
             arr[i] = "big"
     return arr
 
@@ -37,7 +37,8 @@ def sum_total(arr):
     return sum
 
 
-print(sum_total([1, 2, 3, 4]))
+sum = sum_total([1, 2, 3, 4])
+print(sum)
 
 
 #  4 Create a function that takes a list and returns the average of all the values.x
@@ -67,25 +68,25 @@ print(length([37, 2, 1, -9, 7, 8, 9, 2, 3, -9, 0]), "xxxx")
 print(length([]))
 
 
-#  6 maximum - Create a function that takes a list of numbers and returns the maximum
+#  6 minimum - Create a function that takes a list of numbers and returns the minimum
 # value in the list. If the list is empty, have the function return False.
-# Example: maximum([37,2,1,-9]) should return -9
-# Example: maximum([]) should return False
-def maximum(arr):
+# Example: minimum([37,2,1,-9]) should return -9
+# Example: minimum([]) should return False
+def minimum(arr):
     if len(arr) == 0:
         return False
-    max = arr[0]
+    min = arr[0]
     for i in arr:
-        if i < max:
-            max = i
-    return max
+        if i < min:
+            min = i
+    return min
 
 
-print(maximum([37, 2, 1, -9]), "yyyyyyyy")
-print(maximum([]))
+print(minimum([37, 2, 1, -9]), "yyyyyyyy")
+print(minimum([]))
 
 
-#  7 Maximum - Create a function that takes a list and returns the maximum value in the list. If the list is empty, have the function return False.
+#  7 maximum - Create a function that takes a list and returns the maximum value in the list. If the list is empty, have the function return False.
 # Example: maximum([37,2,1,-9]) should return 37
 # Example: maximum([]) should return False
 def maximum(arr):
@@ -101,23 +102,24 @@ def maximum(arr):
 print(maximum([-1, 2, 1, -9]))
 
 
-# 8 Ultimate Analysis - Create a function that takes a list and returns a dictionary that has the sumTotal, average, maximum, maximum and length of the list.
-# Example: ultimate_analysis([37,2,1,-9]) should return {'sumTotal': 31, 'average': 7.75, 'minimum': -9, 'maximum': 37, 'length': 4 }
+# 8 Ultimate Analysis - Create a function that takes a list and returns a dictionary that has the sumTotal, average, minimum, minimum and length of the list.
+# Example: ultimate_analysis([37,2,1,-9]) should return {'sumTotal': 31, 'average': 7.75, 'minimum': -9, 'minimum': 37, 'length': 4 }
 def ultimate_analysis(arr):
     dictionary = {'sumTotal': 0, 'average': 0,
                   'maximum': arr[0], 'minimum': arr[0], 'length': len(arr)}
     for i in arr:
-        if dictionary['minimum'] > i:
-            dictionary['minimum'] = i
-        if dictionary['maximum'] < i:
+        if dictionary['maximum'] > i:
             dictionary['maximum'] = i
+        if dictionary['minimum'] < i:
+            dictionary['minimum'] = i
         dictionary['sumTotal'] += i
         dictionary['average'] = dictionary['sumTotal']/len(arr)
 
     return dictionary
 
 
-print(ultimate_analysis([-1, 2, 1, -9]))
+analysis = ultimate_analysis([-1, 2, 1, -9])
+print(analysis)
 
 #  9 Reverse List - Create a function that takes a list and return that list with values reversed. Do this without creating a second list. (This challenge is known to appear during basic technical interviews.)
 # Example: reverse_list([37,2,1,-9]) should return [-9,1,2,37]
@@ -125,9 +127,9 @@ print(ultimate_analysis([-1, 2, 1, -9]))
 
 def reverse_list(arr):
     for i in range(0, len(arr)//2):
-        x = arr[i]
+        temp = arr[i]
         arr[i] = arr[len(arr)-1-i]
-        arr[len(arr)-1-i] = x
+        arr[len(arr)-1-i] = temp
     return arr
 
 
