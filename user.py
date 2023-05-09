@@ -45,10 +45,8 @@ yousef.display_user_balance()
 ali.make_deposit(1209).make_deposit(
     3900).make_withdrawal(900).make_withdrawal(300)
 ali.display_user_balance()
-mohamed.make_deposit(5900)
-mohamed.make_withdrawal(320)
-mohamed.make_withdrawal(400)
-mohamed.make_withdrawal(2000)
+mohamed.make_deposit(5900).make_withdrawal(
+    320).make_withdrawal(400).make_withdrawal(2000)
 mohamed.display_user_balance()
 yousef.transfer_money(ali, 20000)
 yousef.display_user_balance()
