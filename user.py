@@ -14,7 +14,7 @@ class User:
         if self.account_balance <= 0:
             print("Insufficient balance")
         else:
-            self.account_balance -= amount <= 0
+            self.account_balance -= amount
             print(f"{self.name} withdraw {amount}")
             self.display_user_balance()
             return self
