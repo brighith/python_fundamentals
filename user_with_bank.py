@@ -54,7 +54,7 @@ class User:
         print(self.account.balance)
 
 
-acount1 = BankAccount(int_rate=5, balance=600)
+acount1 = BankAccount(5, 600)
 acount2 = BankAccount(int_rate=4.5, balance=8000)
 acount1.deposit(500).deposit(637).deposit(800).withdraw(
     400).yield_interest().display_account_info()
