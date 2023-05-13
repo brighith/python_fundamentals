@@ -13,12 +13,11 @@ class User:
         return self.account
 
     def display_user_balance(self):
-        print(f" user:{self.name} has {self.account} Dollar")
-        return self.account
+        print(f" user:{self.name} has {self.account.balance} Dollar")
 
     def transfer_money(self, other_user, amount):
         self.account.withdraw(amount)
-        other_user.account.deposit(amount)
+        other_user.make_deposit(amount)
         return self.account
 
 
@@ -49,3 +48,15 @@ class BankAccount:
         else:
             print("your account balance is negative")
         return self
+
+
+yousef = User("yousef", "brighith.y@live.com")
+satha = User("satha", "satah@gmail.com")
+
+yousef.make_deposit(100)
+print(yousef.display_user_balance())
+yousef.make_withdrawal(20)
+print(yousef.display_user_balance())
+yousef.transfer_money(satha, 40)
+print(yousef.display_user_balance())
+print(satha.display_user_balance())
